@@ -151,14 +151,14 @@
 	<!-- UAVGP 2016 -->
 	<message id="224" name="TASK_STATUS_CHANGE">
 		<field type="uint8_t" name="num_odd_even">0, 1 or 2 represent spray all number, odd number or even number</field>
-		<field type="uint8_t" name="task_status_1">Current task status 1, 0~9</field>
-		<field type="uint8_t" name="task_status_2">Current task status 2, 0~4</field>
+		<field type="uint8_t" name="task_status_1">Current task status 1 (actual tast status), 0~16</field>
+		<field type="uint8_t" name="task_status_2">Current task status 2 (serial number), 0~5</field>
 	</message>
 	<message id="220" name="TASK_STATUS_MONITOR">
 		<field type="uint64_t" name="timestamp">Timestamp</field>
 		<field type="uint8_t" name="num_odd_even">0, 1 or 2 represent spray all number, odd number or even number</field>
-		<field type="uint8_t" name="task_status_1">Current task status 1, 0~9</field>
-		<field type="uint8_t" name="task_status_2">Current task status 2, 0~4</field>
+		<field type="uint8_t" name="task_status_1">Current task status 1 (actual tast status), 0~16</field>
+		<field type="uint8_t" name="task_status_2">Current task status 2 (serial number), 0~5</field>
 		<field type="double" name="target_lat">current target latitude, in deg</field>
         <field type="double" name="target_lon">current target longitude, in deg</field>
         <field type="float" name="target_alt">current target altitude, in m</field>
@@ -203,7 +203,7 @@
 	<message id="223" name="VISION_ONE_NUM_GET">
 		<!-- Get the number by vision -->
 		<field type="uint64_t" name="timestamp">Timestamp</field>
-		<field type="uint8_t" name="serial_num">No. of observed number, 1~5</field>
+		<field type="uint8_t" name="serial_num">No. of observed number (just current task status 2), 1~5</field>
 		<field type="uint8_t" name="num">Gotten number by vision</field>
 	</message>
 </messages>
