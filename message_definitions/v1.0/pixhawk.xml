@@ -1,11 +1,19 @@
 <?xml version="1.0"?>
 <mavlink>
 <include>common.xml</include>
+
 <messages>
-    <message id="182" name="MAVROS_TEST_MSG">
-        <description>This mavlink message is for testing with mavros</description>
-        <field type="uint64_t" name="timestamp">Timestamp (milliseconds since system boot)</field>
-        <field type="float" name="test">data</field>
+    <message id="182" name="ATT_POS_VEL_MOCAP">
+      <description>Motion capture attitude, position, and velocity</description>
+      <field type="uint64_t" name="time_usec">Timestamp (micros since boot or Unix epoch)</field>
+      <field type="float[4]" name="q">Attitude quaternion (w, x, y, z order, zero-rotation is 1, 0, 0, 0)</field>
+      <field type="float" name="x">X position in meters (NED)</field>
+      <field type="float" name="y">Y position in meters (NED)</field>
+      <field type="float" name="z">Z position in meters (NED)</field>
+	  <field type="float" name="Vx">X velocity in meters (NED)</field>
+      <field type="float" name="Vy">Y velocity in meters (NED)</field>
+      <field type="float" name="Vz">Z velocity in meters (NED)</field>
     </message>
 </messages>
+
 </mavlink>
